@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Article</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.titre }}</td>
+            </tr>
+            <tr>
+                <th>Texte</th>
+                <td>{{ entity.texte }}</td>
+            </tr>
+            <tr>
+                <th>Notemoy</th>
+                <td>{{ entity.noteMoy }}</td>
+            </tr>
+            <tr>
+                <th>Nbrvisite</th>
+                <td>{{ entity.nbrVisite }}</td>
+            </tr>
+            <tr>
+                <th>Dateredaction</th>
+                <td>{{ entity.dateRedaction|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('article') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('article_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

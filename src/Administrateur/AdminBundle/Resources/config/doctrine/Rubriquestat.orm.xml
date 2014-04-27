@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Administrateur\AdminBundle\Entity\Rubriquestat" table="Rubriquestat">
+    <id name="idRubrique" type="integer" column="Id_rubrique">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="rubrique" type="string" column="Rubrique" length="66" nullable="true"/>
+    <field name="nbrVisite" type="integer" column="Nbr_visite" nullable="true"/>
+  </entity>
+</doctrine-mapping>

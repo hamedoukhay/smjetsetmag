@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Administrateur\AdminBundle\Entity\Film" table="film">
+    <indexes>
+      <index name="fk_film" columns="id_production"/>
+    </indexes>
+    <id name="id" type="integer" column="id_film">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateSortie" type="string" column="date_sortie" length="30" nullable="true"/>
+    <field name="synopsis" type="string" column="synopsis" length="500" nullable="true"/>
+    <field name="dateAjout" type="datetime" column="date_ajout" nullable="false"/>
+    <field name="nomFilm" type="string" column="nom_film" length="45" nullable="true"/>
+    <field name="duree" type="string" column="duree" length="30" nullable="true"/>
+    <many-to-one field="idProduction" target-entity="Production">
+      <join-columns>
+        <join-column name="id_production" referenced-column-name="id_production"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

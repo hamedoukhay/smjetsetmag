@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Administrateur\AdminBundle\Entity\Visite" table="visite">
+    <indexes>
+      <index name="fk_membre" columns="id_membre"/>
+    </indexes>
+    <id name="idVisteur" type="integer" column="id_visteur">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateEntree" type="datetime" column="date_entree" nullable="false"/>
+    <many-to-one field="idMembre" target-entity="Membre">
+      <join-columns>
+        <join-column name="id_membre" referenced-column-name="id_membre"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

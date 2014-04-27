@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Film list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Datesortie</th>
+                <th>Synopsis</th>
+                <th>Dateajout</th>
+                <th>Nomfilm</th>
+                <th>Duree</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('film_show', { 'id': entity.id }) }}">{{ entity.dateSortie }}</a></td>
+                <td>{{ entity.synopsis }}</td>
+                <td>{% if entity.dateAjout %}{{ entity.dateAjout|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.nomFilm }}</td>
+                <td>{{ entity.duree }}</td>
+                <td>{{ entity.id }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('film_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('film_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('film_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

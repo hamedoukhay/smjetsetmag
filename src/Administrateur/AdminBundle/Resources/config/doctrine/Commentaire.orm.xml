@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Administrateur\AdminBundle\Entity\Commentaire" table="commentaire">
+    <indexes>
+      <index name="fk_com1" columns="id_film"/>
+      <index name="fk_com2" columns="id_article"/>
+      <index name="fk_com3" columns="id_evenement"/>
+      <index name="fk_com4" columns="id_membre"/>
+      <index name="fk_com5" columns="id_projection"/>
+    </indexes>
+    <id name="id" type="integer" column="id_com">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dateCom" type="datetime" column="date_com" nullable="false"/>
+    <field name="texte" type="string" column="texte" length="255" nullable="false"/>
+    <many-to-one field="idProjection" target-entity="Projection">
+      <join-columns>
+        <join-column name="id_projection" referenced-column-name="id_projection"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idEvenement" target-entity="Evenement">
+      <join-columns>
+        <join-column name="id_evenement" referenced-column-name="id_evenement"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idArticle" target-entity="Article">
+      <join-columns>
+        <join-column name="id_article" referenced-column-name="id_article"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idFilm" target-entity="Film">
+      <join-columns>
+        <join-column name="id_film" referenced-column-name="id_film"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idMembre" target-entity="Membre">
+      <join-columns>
+        <join-column name="id_membre" referenced-column-name="id_membre"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

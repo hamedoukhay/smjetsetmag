@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Administrateur\AdminBundle\Entity\Projection" table="projection">
+    <indexes>
+      <index name="fk_project2" columns="id_salle"/>
+      <index name="id_film" columns="id_film"/>
+    </indexes>
+    <id name="id" type="integer" column="id_projection">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="idSalle" target-entity="Cinema">
+      <join-columns>
+        <join-column name="id_salle" referenced-column-name="id_salle"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idFilm" target-entity="Film">
+      <join-columns>
+        <join-column name="id_film" referenced-column-name="id_film"/>
+      </join-columns>
+    </many-to-one>
+        <field name="dateHeure" type="string" column="date_heure" length="50" nullable="true"/>
+  </entity>
+</doctrine-mapping>

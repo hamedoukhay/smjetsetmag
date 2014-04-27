@@ -1,0 +1,98 @@
+{% extends "AdministrateurAdminBundle::admin_layout.html.twig" %}
+
+{% block title %}Admin Dashbord{% endblock %}
+{% block stylesheets %}
+
+<!--data-table css-->
+<link href="{{ asset('bundles/jetsetmag/plugins/data-tables/DT_bootstrap.css') }}" rel="stylesheet">
+<link href="{{ asset('bundles/jetsetmag/plugins/advanced-datatable/css/demo_table.css') }}" rel="stylesheet">
+<link href="{{ asset('bundles/jetsetmag/plugins/advanced-datatable/css/demo_page.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <h1>Article list</h1>
+    
+     <div class="row">
+        <!--col-md-12 start-->
+          <div class="col-md-12">
+          <!--box-info start-->
+            <div class="box-info">
+              <h4>Data Table</h4>
+              <hr>
+              <!--adv-table start-->
+              <div class="adv-table">
+                  
+        <table  class="display table table-bordered table-striped" id="dynamic-table">
+                  <thead>
+                    <tr>
+                      <th>Titre</th>
+                        <th>Texte</th>
+                        <th>Notemoy</th>
+                        <th>Nbrvisite</th>
+                        <th>Dateredaction</th>
+                        <th>Id</th>
+                        <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for entity in entities %}
+                    <tr class="gradeA">
+                        <td><a href="{{ path('article_show', { 'id': entity.id}) }}">{{ entity.titre }}</a></td>
+                        <td>{{ entity.texte }}</td>
+                        <td>{{ entity.noteMoy }}</td>
+                        <td>{{ entity.nbrVisite }}</td>
+                        <td>{% if entity.dateRedaction %}{{ entity.dateRedaction|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{{ entity.id}}</td>
+                        <td>
+                            <div>
+                                <button class="btn btn-group-justified btn-success" type="button">
+                                    <a href="{{ path('article_show', { 'id': entity.id }) }}">
+                                        <i style="color: white" class="fa fa-eye"></i>
+                                    <span class="label">Show</span>
+                                    </a>
+                                </button>
+                            </div>
+                            <div>
+                                <button class="btn btn-group-justified btn-info" type="button">
+                                    <a href="{{ path('article_edit', { 'id': entity.id }) }}">
+                                        <i style="color: white" class="fa fa-refresh"></i>
+                                    <span class="label">Edit</span>
+                                    </a>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Texte</th>
+                        <th>Notemoy</th>
+                        <th>Nbrvisite</th>
+                        <th>Dateredaction</th>
+                        <th>Id</th>
+                        <th>Actions</th>
+                    </tr>
+                  </tfoot>
+                </table>
+    
+              </div><!--adv-table end-->
+            </div><!--box-info end-->
+          </div><!--col-md-12 end-->
+        </div><!--row end-->
+        <!--row start-->
+    
+    
+        <ul>
+        <li>
+            <a href="{{ path('article_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+{% block scripts %}
+<script src="{{ asset('bundles/jetsetmag/plugins/data-tables/DT_bootstrap.js')}}"></script> 
+<script src="{{ asset('bundles/jetsetmag/plugins/data-tables/jquery.dataTables.js')}}"></script> 
+<script src="{{ asset('bundles/jetsetmag/plugins/data-tables/dynamic_table_init.js')}}"></script>
+{% endblock %}

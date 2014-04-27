@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Administrateur\AdminBundle\Entity\Media" table="Media">
+    <id name="idMedia" type="integer" column="id_media">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="typeMedia" type="string" column="type_media" length="30" nullable="false"/>
+    <field name="url" type="string" column="url" length="300" nullable="false"/>
+  </entity>
+</doctrine-mapping>

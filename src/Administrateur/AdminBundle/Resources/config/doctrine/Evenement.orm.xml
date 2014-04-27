@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Administrateur\AdminBundle\Entity\Evenement" table="evenement">
+    <indexes>
+      <index name="id_membre" columns="id_membre"/>
+    </indexes>
+    <id name="id" type="integer" column="id_evenement">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="titreEvent" type="string" column="titre_event" length="45" nullable="true"/>
+    <field name="dateDebEvent" type="datetime" column="date_deb_event" nullable="true"/>
+    <field name="dateFinEvent" type="datetime" column="date_fin_event" nullable="true"/>
+    <field name="typeEvent" type="string" column="type_event" length="20" nullable="true"/>
+    <field name="description" type="string" column="description" length="200" nullable="true"/>
+    <field name="bonPlan" type="boolean" column="bon_plan" nullable="true"/>
+    <field name="adresse" type="string" column="adresse" length="50" nullable="true"/>
+    <many-to-one field="idMembre" target-entity="Membre">
+      <join-columns>
+        <join-column name="id_membre" referenced-column-name="id_membre"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

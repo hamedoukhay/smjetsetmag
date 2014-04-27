@@ -1,0 +1,155 @@
+jet_set_mag_admin_homepage:
+    pattern:  /admin
+    defaults: { _controller: JetSetMagAdminBundle:Admin:index }
+administrateur_admin_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AdministrateurAdminBundle:Default:index }
+article:
+    pattern:  /article
+    defaults: { _controller: AdministrateurAdminBundle:Article:index }
+article_show:
+    pattern:  /article/show/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Article:show }
+article_edit:
+    pattern:  /article/edit/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Article:edit }
+article_new:
+    pattern:  /article/new
+    defaults: { _controller: AdministrateurAdminBundle:Article:new }
+article_create:
+    pattern:  /article/create
+    defaults: { _controller: AdministrateurAdminBundle:Article:create }
+article_delete:
+    pattern:  /article/delete/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Article:delete }
+article_update:
+    pattern:  /article/update/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Article:update }
+cinema:
+    pattern:  /cinema
+    defaults: { _controller: AdministrateurAdminBundle:Cinema:index }
+cinema_show:
+    pattern:  /cinema/show/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Cinema:show }
+cinema_edit:
+    pattern:  /cinema/edit/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Cinema:edit }
+cinema_new:
+    pattern:  /cinema/new
+    defaults: { _controller: AdministrateurAdminBundle:Cinema:new }
+cinema_create:
+    pattern:  /cinema/create
+    defaults: { _controller: AdministrateurAdminBundle:Cinema:create }
+cinema_delete:
+    pattern:  /cinema/delete/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Cinema:delete }
+cinema_update:
+    pattern:  /cinema/update/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Cinema:update }
+commentaire:
+    pattern:  /commentaire
+    defaults: { _controller: AdministrateurAdminBundle:Commentaire:index }
+commentaire_show:
+    pattern:  /commentaire/show/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Commentaire:show }
+commentaire_edit:
+    pattern:  /commentaire/edit/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Commentaire:edit }
+commentaire_new:
+    pattern:  /commentaire/new
+    defaults: { _controller: AdministrateurAdminBundle:Commentaire:new }
+commentaire_create:
+    pattern:  /commentaire/create
+    defaults: { _controller: AdministrateurAdminBundle:Commentaire:create }
+commentaire_delete:
+    pattern:  /commentaire/delete/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Commentaire:delete }
+commentaire_update:
+    pattern:  /commentaire/update/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Commentaire:update }
+evenement:
+    pattern:  /evenement
+    defaults: { _controller: AdministrateurAdminBundle:Evenement:index }
+evenement_show:
+    pattern:  /evenement/show/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Evenement:show }
+evenement_edit:
+    pattern:  /evenement/edit/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Evenement:edit }
+evenement_new:
+    pattern:  /evenement/new
+    defaults: { _controller: AdministrateurAdminBundle:Evenement:new }
+evenement_create:
+    pattern:  /evenement/create
+    defaults: { _controller: AdministrateurAdminBundle:Evenement:create }
+evenement_delete:
+    pattern:  /evenement/delete/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Evenement:delete }
+evenement_update:
+    pattern:  /evenement/update/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Evenement:update }
+membre:
+    pattern:  /membre
+    defaults: { _controller: AdministrateurAdminBundle:Membre:index }
+membre_show:
+    pattern:  /membre/show/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Membre:show }
+membre_edit:
+    pattern:  /membre/edit/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Membre:edit }
+membre_new:
+    pattern:  /membre/new
+    defaults: { _controller: AdministrateurAdminBundle:Membre:new }
+membre_create:
+    pattern:  /membre/create
+    defaults: { _controller: AdministrateurAdminBundle:Membre:create }
+membre_delete:
+    pattern:  /membre/delete/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Membre:delete }
+membre_update:
+    pattern:  /membre/update/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Membre:update }
+projection:
+    pattern:  /projection
+    defaults: { _controller: AdministrateurAdminBundle:Projection:index }
+projection_show:
+    pattern:  /projection/show/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Projection:show }
+projection_edit:
+    pattern:  /projection/edit/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Projection:edit }
+projection_new:
+    pattern:  /projection/new
+    defaults: { _controller: AdministrateurAdminBundle:Projection:new }
+projection_create:
+    pattern:  /projection/create
+    defaults: { _controller: AdministrateurAdminBundle:Projection:create }
+projection_delete:
+    pattern:  /projection/delete/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Projection:delete }
+projection_update:
+    pattern:  /projection/update/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Projection:update }
+film:
+    pattern:  /film
+    defaults: { _controller: AdministrateurAdminBundle:Film:index }
+film_show:
+    pattern:  /film/show/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Film:show }
+film_edit:
+    pattern:  /film/edit/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Film:edit }
+film_new:
+    pattern:  /film/new
+    defaults: { _controller: AdministrateurAdminBundle:Film:new }
+film_create:
+    pattern:  /film/create
+    defaults: { _controller: AdministrateurAdminBundle:Film:create }
+film_delete:
+    pattern:  /film/delete/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Film:delete }
+film_update:
+    pattern:  /film/update/{id}
+    defaults: { _controller: AdministrateurAdminBundle:Film:update }
+   
+
